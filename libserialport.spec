@@ -7,7 +7,7 @@ Version:        0.1.1
 Release:        10%{?dist}
 Summary:        Library for accessing serial ports
 License:        LGPLv3+
-URL:            http://sigrok.org/wiki/%{name}
+URL:            https://sigrok.org/wiki/%{name}
 Source0:        http://sigrok.org/download/source/%{name}/%{name}-%{version}.tar.gz
 BuildRequires:  doxygen
 BuildRequires:  graphviz
