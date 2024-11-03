@@ -3,8 +3,8 @@
 %define devname %mklibname -d serialport
 
 Name:           libserialport
-Version:        0.1.1
-Release:        10%{?dist}
+Version:        0.1.2
+Release:        10%{?dist}1
 Summary:        Library for accessing serial ports
 License:        LGPLv3+
 URL:            https://sigrok.org/wiki/%{name}
