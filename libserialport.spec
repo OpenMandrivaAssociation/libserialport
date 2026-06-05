@@ -4,20 +4,17 @@
 
 Name:           libserialport
 Version:        0.1.2
-Release:        10%{?dist}2
+Release:        102
 Summary:        Library for accessing serial ports
 License:        LGPL-3.0-or-later
 URL:            https://sigrok.org/wiki/%{name}
 Source0:        http://sigrok.org/download/source/%{name}/%{name}-%{version}.tar.gz
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	libtool-base
-BuildRequires:	slibtool
-BuildRequires:	make
+BuildSystem:	autotools
 BuildRequires:  doxygen
 BuildRequires:  graphviz
 
-Provides: bundled(jquery) = 1.7.1
+%patchlist
+libserialport-0.1.2-fix-autoconk.patch
 
 %description
 libserialport is a minimal library written in C that is intended to take care
@@ -57,21 +54,13 @@ The %{name}-doc package contains documentation for developing software
 with %{name}.
 
 
-%prep
-%setup -q
+%prep -a
+slibtoolize --force
+autoreconf
 
-%build
-%configure --disable-static
-V=1 make %{?_smp_mflags}
-
+%build -a
 # This builds documentation for the -doc package
-make %{?_smp_mflags} doc
-
-
-%install
-%make_install
-find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
-
+make -C _OMV_rpm_build %{?_smp_mflags} doc
 
 %files -n %{libname}
 %{_libdir}/%{name}.so.0*
@@ -83,4 +72,4 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 %{_libdir}/%{name}.so
 
 %files doc
-%doc doxy/html-api/
+%doc _OMV_rpm_build/doxy/html-api/
