@@ -4,9 +4,9 @@
 
 Name:           libserialport
 Version:        0.1.2
-Release:        10%{?dist}1
+Release:        10%{?dist}2
 Summary:        Library for accessing serial ports
-License:        LGPLv3+
+License:        LGPL-3.0-or-later
 URL:            https://sigrok.org/wiki/%{name}
 Source0:        http://sigrok.org/download/source/%{name}/%{name}-%{version}.tar.gz
 BuildRequires:	autoconf
