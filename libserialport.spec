@@ -11,6 +11,8 @@ URL:            https://sigrok.org/wiki/%{name}
 Source0:        http://sigrok.org/download/source/%{name}/%{name}-%{version}.tar.gz
 BuildSystem:	autotools
 BuildRequires:	slibtool
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:  doxygen
 BuildRequires:  graphviz
 
