@@ -10,6 +10,7 @@ License:        LGPL-3.0-or-later
 URL:            https://sigrok.org/wiki/%{name}
 Source0:        http://sigrok.org/download/source/%{name}/%{name}-%{version}.tar.gz
 BuildSystem:	autotools
+BuildRequires:	slibtool
 BuildRequires:  doxygen
 BuildRequires:  graphviz
 
